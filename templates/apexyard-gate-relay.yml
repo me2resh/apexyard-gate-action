@@ -1,0 +1,14 @@
+name: apexyard-gate-relay
+
+on:
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+
+permissions: {}
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Relay review event
+        run: echo relay

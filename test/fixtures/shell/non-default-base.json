@@ -1,0 +1,44 @@
+{
+  "name": "non-default-base",
+  "baseRef": "evil-base",
+  "defaultBranch": "main",
+  "pullState": "open",
+  "gates": {
+    "evil-base": {
+      "v": 1,
+      "approvers": [222]
+    },
+    "main": {
+      "v": 1,
+      "approvers": [999001]
+    }
+  },
+  "expect": {
+    "exitCode": 1,
+    "conclusion": "failure",
+    "title": "fail",
+    "verdict": "fail",
+    "noApexyardContents": true,
+    "summaryIncludes": [
+      "AY-GATE-BASE fail PR base is not the default branch",
+      "evil-base"
+    ],
+    "summaryExcludes": [
+      "event-base",
+      "approved on the head sha",
+      "999001"
+    ],
+    "rows": [
+      {
+        "fact": "Base ref",
+        "value": "evil-base",
+        "label": "verified"
+      },
+      {
+        "fact": "Default branch",
+        "value": "main",
+        "label": "verified"
+      }
+    ]
+  }
+}

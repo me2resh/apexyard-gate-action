@@ -1,0 +1,17 @@
+{
+  "name": "shell-exception",
+  "throwOn": "base-ref",
+  "expect": {
+    "exitCode": 1,
+    "conclusion": "failure",
+    "title": "gate error",
+    "verdict": "error",
+    "summaryIncludes": [
+      "gate error"
+    ],
+    "summaryExcludes": [
+      "boom",
+      "pass"
+    ]
+  }
+}

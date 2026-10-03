@@ -1,0 +1,76 @@
+{
+  "name": "changes-requested-page-2",
+  "reviewPages": [
+    [
+      {
+        "id": 10,
+        "state": "APPROVED",
+        "commit_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "submitted_at": "2026-10-01T12:00:00Z",
+        "user": {
+          "id": 222,
+          "login": "approver",
+          "type": "User"
+        }
+      }
+    ],
+    [
+      {
+        "id": 11,
+        "state": "CHANGES_REQUESTED",
+        "commit_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "submitted_at": "2026-10-01T13:00:00Z",
+        "user": {
+          "id": 222,
+          "login": "approver",
+          "type": "User"
+        }
+      }
+    ]
+  ],
+  "agdr": [
+    {
+      "filename": "docs/agdr/AgDR-0002-added.md",
+      "status": "added",
+      "text": "---\r\nid: AgDR-0002\r\nrun: ayr-20261001T140000Z-aaaaaaaa\r\n---\r\n\r\nSECRET-AGDR-BODY\r\n"
+    },
+    {
+      "filename": "docs/agdr/AgDR-0003-changed.md",
+      "status": "changed",
+      "text": "---\nid: AgDR-0003\nrun: ayr-20261001T140000Z-bbbbbbbb\n---\n\n"
+    },
+    {
+      "filename": "docs/agdr/AgDR-0008-removed.md",
+      "status": "removed",
+      "text": "---\nrun: ayr-20261001T140000Z-11111111\n---\n"
+    },
+    {
+      "filename": "docs/agdr/AgDR-0009-unchanged.md",
+      "status": "unchanged",
+      "text": "---\nrun: ayr-20261001T140000Z-22222222\n---\n"
+    }
+  ],
+  "expect": {
+    "exitCode": 1,
+    "conclusion": "failure",
+    "title": "fail",
+    "verdict": "fail",
+    "requirePage2": true,
+    "summaryIncludes": [
+      "no qualifying approval",
+      "ayr-20261001T140000Z-aaaaaaaa",
+      "ayr-20261001T140000Z-bbbbbbbb",
+      "`docs/agdr/AgDR-0003-changed.md`"
+    ],
+    "summaryExcludes": [
+      "approved on the head sha",
+      "SECRET-AGDR-BODY",
+      "ayr-20261001T140000Z-11111111",
+      "ayr-20261001T140000Z-22222222"
+    ],
+    "notFetchedPaths": [
+      "docs/agdr/AgDR-0008-removed.md",
+      "docs/agdr/AgDR-0009-unchanged.md"
+    ]
+  }
+}

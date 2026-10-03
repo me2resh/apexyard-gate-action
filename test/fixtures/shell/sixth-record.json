@@ -1,0 +1,60 @@
+{
+  "name": "sixth-record",
+  "trailers": [
+    "ayr-20261001T120001Z-00000001",
+    "ayr-20261001T120002Z-00000002",
+    "ayr-20261001T120003Z-00000003",
+    "ayr-20261001T120004Z-00000004",
+    "ayr-20261001T120005Z-00000005",
+    "ayr-20261001T120006Z-00000006"
+  ],
+  "runs": [
+    {
+      "id": "ayr-20261001T120001Z-00000001",
+      "slice": "slice-kept-1"
+    },
+    {
+      "id": "ayr-20261001T120002Z-00000002",
+      "slice": "slice-kept-2"
+    },
+    {
+      "id": "ayr-20261001T120003Z-00000003",
+      "slice": "slice-kept-3"
+    },
+    {
+      "id": "ayr-20261001T120004Z-00000004",
+      "slice": "slice-kept-4"
+    },
+    {
+      "id": "ayr-20261001T120005Z-00000005",
+      "slice": "slice-kept-5"
+    },
+    {
+      "id": "ayr-20261001T120006Z-00000006",
+      "slice": "slice-secret-sixth"
+    }
+  ],
+  "expect": {
+    "exitCode": 0,
+    "conclusion": "success",
+    "title": "pass",
+    "verdict": "pass",
+    "summaryIncludes": [
+      "5 of 6 run ids read",
+      "6 of 6 commits carry the trailer"
+    ],
+    "summaryExcludes": [
+      "slice-secret-sixth"
+    ],
+    "fetchedRunIds": [
+      "ayr-20261001T120001Z-00000001",
+      "ayr-20261001T120002Z-00000002",
+      "ayr-20261001T120003Z-00000003",
+      "ayr-20261001T120004Z-00000004",
+      "ayr-20261001T120005Z-00000005"
+    ],
+    "notFetchedRunIds": [
+      "ayr-20261001T120006Z-00000006"
+    ]
+  }
+}

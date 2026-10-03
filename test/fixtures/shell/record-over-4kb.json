@@ -1,0 +1,26 @@
+{
+  "name": "record-over-4kb",
+  "runs": [
+    {
+      "id": "ayr-20261001T120000Z-aaaaaaaa",
+      "slice": "slice-secret-oversize",
+      "padTo": 4097
+    }
+  ],
+  "expect": {
+    "exitCode": 0,
+    "conclusion": "success",
+    "title": "pass",
+    "verdict": "pass",
+    "summaryIncludes": [
+      "not reported",
+      "1 of 1 commits carry the trailer"
+    ],
+    "summaryExcludes": [
+      "slice-secret-oversize"
+    ],
+    "fetchedRunIds": [
+      "ayr-20261001T120000Z-aaaaaaaa"
+    ]
+  }
+}

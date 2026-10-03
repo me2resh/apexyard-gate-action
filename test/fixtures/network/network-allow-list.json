@@ -1,0 +1,19 @@
+{
+  "name": "network-allow-list",
+  "allowed": [
+    "https://api.github.com/repos/me2resh/apexyard-demo/pulls/1",
+    "https://api.github.com/graphql",
+    "https://api.github.com:443/repos/me2resh/apexyard-demo"
+  ],
+  "rejected": [
+    "https://example.com/pulls",
+    "http://api.github.com/repos/me2resh/apexyard-demo",
+    "https://api.github.com.evil.example/repos/me2resh/apexyard-demo",
+    "https://evil.example/api.github.com",
+    "https://user:pass@api.github.com/repos/me2resh/apexyard-demo",
+    "https://api.github.com:8443/repos/me2resh/apexyard-demo",
+    "https://api.github.com./repos/me2resh/apexyard-demo",
+    "not a url"
+  ],
+  "nextHost": "https://example.com/next"
+}

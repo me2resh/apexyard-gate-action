@@ -1,0 +1,17 @@
+{
+  "name": "agdr-limit",
+  "agdrCount": 21,
+  "poisonRunId": "ayr-20261001T130000Z-0mitted1",
+  "expect": {
+    "exitCode": 0,
+    "conclusion": "success",
+    "title": "pass",
+    "verdict": "pass",
+    "omittedAgdr": 1,
+    "maxAgdrFetches": 20,
+    "summaryExcludes": [
+      "ayr-20261001T130000Z-0mitted1",
+      "AgDR-file-21.md"
+    ]
+  }
+}

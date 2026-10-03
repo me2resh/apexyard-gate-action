@@ -1,0 +1,13 @@
+{
+  "name": "invalid-gate",
+  "gateMode": "invalid",
+  "expect": {
+    "exitCode": 1,
+    "conclusion": "failure",
+    "title": "fail",
+    "verdict": "fail",
+    "summaryIncludes": [
+      "approval fail invalid gate.json"
+    ]
+  }
+}

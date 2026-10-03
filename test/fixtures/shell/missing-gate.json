@@ -1,0 +1,14 @@
+{
+  "name": "missing-gate",
+  "gateMode": "missing",
+  "expect": {
+    "exitCode": 1,
+    "conclusion": "failure",
+    "title": "fail",
+    "verdict": "fail",
+    "summaryIncludes": [
+      "approval fail missing gate.json",
+      "AY-TICKET-001 pass open linked issue"
+    ]
+  }
+}

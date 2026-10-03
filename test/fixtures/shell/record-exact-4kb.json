@@ -1,0 +1,23 @@
+{
+  "name": "record-exact-4kb",
+  "runs": [
+    {
+      "id": "ayr-20261001T120000Z-aaaaaaaa",
+      "slice": "slice-exact-cap",
+      "padTo": 4096
+    }
+  ],
+  "expect": {
+    "exitCode": 0,
+    "conclusion": "success",
+    "title": "pass",
+    "verdict": "pass",
+    "summaryIncludes": [
+      "slice-exact-cap",
+      "ayr-20261001T120000Z-aaaaaaaa slice-exact-cap"
+    ],
+    "fetchedRunIds": [
+      "ayr-20261001T120000Z-aaaaaaaa"
+    ]
+  }
+}

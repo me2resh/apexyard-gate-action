@@ -1,0 +1,30 @@
+{
+  "name": "agdr-oversize",
+  "agdr": [
+    {
+      "filename": "docs/agdr/AgDR-0099-big.md",
+      "status": "added",
+      "text": "---\nrun: ayr-20261001T130000Z-0a570001\n---\n\n",
+      "padTo": 65537
+    }
+  ],
+  "expect": {
+    "exitCode": 0,
+    "conclusion": "success",
+    "title": "pass",
+    "verdict": "pass",
+    "summaryIncludes": [
+      "`docs/agdr/AgDR-0099-big.md`"
+    ],
+    "summaryExcludes": [
+      "ayr-20261001T130000Z-0a570001"
+    ],
+    "rows": [
+      {
+        "fact": "AgDR run link",
+        "value": "not reported",
+        "label": "reported"
+      }
+    ]
+  }
+}

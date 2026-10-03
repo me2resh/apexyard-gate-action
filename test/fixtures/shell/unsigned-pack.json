@@ -1,0 +1,16 @@
+{
+  "name": "unsigned-pack",
+  "packMode": "unsigned",
+  "expect": {
+    "exitCode": 1,
+    "conclusion": "failure",
+    "title": "fail",
+    "verdict": "fail",
+    "summaryIncludes": [
+      "pack fail unsigned pack"
+    ],
+    "summaryExcludes": [
+      "open linked issue"
+    ]
+  }
+}

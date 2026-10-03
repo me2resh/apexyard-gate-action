@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/me2resh/apexyard-gate/schemas/pack.v0.json",
+  "title": "ApexYard pack v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "version", "team", "rules"],
+  "properties": {
+    "schema": { "const": "apexyard.pack/0" },
+    "version": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+    },
+    "team": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]{1,32}$"
+    },
+    "rules": {
+      "type": "array",
+      "description": "Rule IDs must be unique. Validators must enforce rule ID uniqueness in code.",
+      "minItems": 1,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "description", "enforcement", "check"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 66,
+            "pattern": "^AY-[A-Z0-9]+(-[A-Z0-9]+)*$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 280,
+            "pattern": "^[^\\u0000-\\u001F\\u007F-\\u009F]+$"
+          },
+          "enforcement": {
+            "enum": ["blocking", "advisory"]
+          },
+          "check": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,63}$"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "tampered-pack",
+  "packMode": "tampered",
+  "expect": {
+    "exitCode": 1,
+    "conclusion": "failure",
+    "title": "fail",
+    "verdict": "fail",
+    "summaryIncludes": [
+      "pack fail bad signature"
+    ],
+    "summaryExcludes": [
+      "open linked issue",
+      "9.9.9"
+    ]
+  }
+}

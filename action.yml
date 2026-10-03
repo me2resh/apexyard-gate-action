@@ -1,0 +1,18 @@
+name: ApexYard Gate
+description: Post the ApexYard Gate check on a pull request head commit.
+inputs:
+  token:
+    description: Read-only job token used for all repository and pull request reads.
+    required: true
+  app-id:
+    description: GitHub App ID used to post the gate check.
+    required: true
+  app-key:
+    description: GitHub App private key used to mint the check-writing token.
+    required: true
+outputs:
+  verdict:
+    description: Gate verdict. One of pass, fail, or error.
+runs:
+  using: node24
+  main: dist/index.js

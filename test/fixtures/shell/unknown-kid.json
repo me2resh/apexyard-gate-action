@@ -1,0 +1,17 @@
+{
+  "name": "unknown-kid",
+  "packMode": "unknown-kid",
+  "expect": {
+    "exitCode": 1,
+    "conclusion": "failure",
+    "title": "fail",
+    "verdict": "fail",
+    "summaryIncludes": [
+      "pack fail unknown kid"
+    ],
+    "summaryExcludes": [
+      "open linked issue",
+      "0.1.0 demo ok"
+    ]
+  }
+}

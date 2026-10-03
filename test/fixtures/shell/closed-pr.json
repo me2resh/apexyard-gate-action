@@ -1,0 +1,32 @@
+{
+  "name": "closed-pr",
+  "baseRef": "main",
+  "defaultBranch": "main",
+  "pullState": "closed",
+  "expect": {
+    "exitCode": 1,
+    "conclusion": "failure",
+    "title": "fail",
+    "verdict": "fail",
+    "noApexyardContents": true,
+    "summaryIncludes": [
+      "AY-GATE-OPEN fail PR is not open"
+    ],
+    "summaryExcludes": [
+      "event-base",
+      "approved on the head sha"
+    ],
+    "rows": [
+      {
+        "fact": "Base ref",
+        "value": "main",
+        "label": "verified"
+      },
+      {
+        "fact": "Default branch",
+        "value": "main",
+        "label": "verified"
+      }
+    ]
+  }
+}

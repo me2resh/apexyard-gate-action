@@ -1,0 +1,13 @@
+{
+  "schema": "apexyard.pack/0",
+  "version": "0.1.0",
+  "team": "demo",
+  "rules": [
+    {
+      "id": "AY-TICKET-001",
+      "description": "Every pull request links a ticket.",
+      "enforcement": "blocking",
+      "check": "linked-ticket"
+    }
+  ]
+}

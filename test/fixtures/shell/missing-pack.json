@@ -1,0 +1,16 @@
+{
+  "name": "missing-pack",
+  "packMode": "missing",
+  "expect": {
+    "exitCode": 1,
+    "conclusion": "failure",
+    "title": "fail",
+    "verdict": "fail",
+    "summaryIncludes": [
+      "pack fail missing pack"
+    ],
+    "summaryExcludes": [
+      "open linked issue"
+    ]
+  }
+}

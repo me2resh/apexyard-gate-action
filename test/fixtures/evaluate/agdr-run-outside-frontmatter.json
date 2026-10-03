@@ -1,0 +1,174 @@
+{
+  "name": "agdr-run-outside-frontmatter",
+  "policy": {
+    "baseSha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "pack": {
+      "ok": true,
+      "kid": "apexyard-pack-1",
+      "pack": {
+        "schema": "apexyard.pack/0",
+        "version": "0.1.0",
+        "team": "demo",
+        "rules": [
+          {
+            "id": "AY-TICKET-001",
+            "description": "Every pull request links a ticket.",
+            "enforcement": "blocking",
+            "check": "linked-ticket"
+          }
+        ]
+      },
+      "error": null,
+      "version": "0.1.0",
+      "team": "demo"
+    },
+    "gate": {
+      "ok": true,
+      "approvers": [
+        222
+      ],
+      "error": null
+    }
+  },
+  "pr": {
+    "repository": {
+      "owner": "me2resh",
+      "name": "apexyard-demo"
+    },
+    "number": 7,
+    "title": "SECRET-PR-TITLE",
+    "body": "SECRET-PR-BODY",
+    "author": {
+      "id": 111,
+      "login": "author",
+      "type": "User"
+    },
+    "headSha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "base": {
+      "ref": "main",
+      "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    "reviews": [
+      {
+        "id": 50,
+        "state": "APPROVED",
+        "commit_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "submitted_at": "2026-10-01T12:00:00Z",
+        "user": {
+          "id": 222,
+          "login": "approver",
+          "type": "User"
+        }
+      },
+      {
+        "id": 51,
+        "state": "COMMENTED",
+        "commit_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "submitted_at": "2026-10-01T15:00:00Z",
+        "user": {
+          "id": 222,
+          "login": "approver",
+          "type": "User"
+        }
+      }
+    ],
+    "linkedIssues": [
+      {
+        "number": 7,
+        "state": "OPEN",
+        "title": "SECRET-ISSUE-TITLE",
+        "repository": {
+          "owner": "me2resh",
+          "name": "apexyard-demo"
+        }
+      }
+    ],
+    "commits": [
+      {
+        "sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "message": "SECRET-COMMIT-SUBJECT\n\nSee ApexYard-Run: ayr-20261001T120000Z-ffffffff\n\nApexYard-Run: ayr-20261001T120000Z-aaaaaaaa\n"
+      }
+    ],
+    "runRecords": [
+      {
+        "runId": "ayr-20261001T120000Z-aaaaaaaa",
+        "status": "parsed",
+        "json": {
+          "v": 1,
+          "kind": "apexyard.run-record",
+          "run_id": "ayr-20261001T120000Z-aaaaaaaa",
+          "job": {
+            "v": 1,
+            "job_id": "ayj-20261001T120000Z-aaaaaaaa",
+            "entry_point": "runner-click",
+            "repo": {
+              "owner": "me2resh",
+              "name": "apexyard-demo"
+            },
+            "issue": 7,
+            "issue_body_sha256": "abababababababababababababababababababababababababababababababab",
+            "base": {
+              "ref": "main",
+              "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            },
+            "slice_id": "slice-plan-demo",
+            "harness": "claude",
+            "mode": "default",
+            "model": "default",
+            "team": null,
+            "requested_by": {
+              "github_id": 111,
+              "login": "author",
+              "source": "gh-cli"
+            },
+            "signed_in_as": null,
+            "requested_at": "2026-10-01T12:00:00Z"
+          },
+          "branch": "feature/GH-7-note",
+          "agdr_paths": [
+            "docs/agdr/AgDR-0001-note.md"
+          ],
+          "runner_version": "0.3.0",
+          "created_at": "2026-10-01T12:00:00Z"
+        }
+      }
+    ],
+    "agdrFiles": [
+      {
+        "path": "docs/agdr/AgDR-0004-body.md",
+        "text": "---\nid: AgDR-0004\nstatus: proposed\n---\n\nrun: ayr-20261001T120000Z-aaaaaaaa\nSECRET-AGDR-BODY"
+      }
+    ],
+    "agdrOmitted": 0
+  },
+  "expect": {
+    "verdict": "pass",
+    "reasons": [
+      {
+        "id": "AY-TICKET-001",
+        "outcome": "pass",
+        "detail": "open linked issue"
+      },
+      {
+        "id": "approval",
+        "outcome": "pass",
+        "detail": "approved on the head sha"
+      }
+    ],
+    "summaryExcludes": [
+      "SECRET-AGDR-BODY"
+    ],
+    "rows": [
+      {
+        "fact": "AgDR path",
+        "value": "`docs/agdr/AgDR-0004-body.md`",
+        "label": "presence verified"
+      },
+      {
+        "fact": "AgDR run link",
+        "value": "not reported",
+        "label": "reported"
+      }
+    ]
+  }
+}
